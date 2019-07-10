@@ -1,4 +1,4 @@
-package com;
+package com.changge2pdf.client;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Service00 {
+public class SocketClient {
 	public static void main(String[] args) throws Exception 
     {  
      //建立服务端Socket  

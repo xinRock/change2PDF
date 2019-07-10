@@ -1,11 +1,11 @@
-package test;
+package com.changge2pdf.tools;
 
 import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
-public class Demo {
+public class WPSUtil {
 	private static final Integer WORD_TO_PDF_OPERAND = 17;
     private static final Integer PPT_TO_PDF_OPERAND = 32;
     private static final Integer EXCEL_TO_PDF_OPERAND = 0;
@@ -121,7 +121,7 @@ public class Demo {
     
     public static void main(String[] args) throws Exception {
         String path = "C:/Users/johnny/Desktop/文档/20170427/test/001/";
-        new Demo().doc2pdf(path + "1.docx", path+ "1.pdf");
+        new WPSUtil().doc2pdf(path + "1.docx", path+ "1.pdf");
 //      new Demo().doc2pdf(path + "1.docx", path+ "1x.pdf");
         System.out.println("转化成功！");
         

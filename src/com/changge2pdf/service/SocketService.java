@@ -1,4 +1,4 @@
-package com;
+package com.changge2pdf.service;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,9 +9,9 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import test.Demo;
+import com.changge2pdf.tools.WPSUtil;
 
-public class Service {
+public class SocketService {
 
 	public static void main(String[] args) throws Exception {
 		System.out.println("服务器启动了");
@@ -44,7 +44,7 @@ public class Service {
 		}
 		fileSave.close();
 		// 返回文件复制情况信息
-		Demo.doc2pdf(srcFilePathdoc, srcFilePathpdf);
+		WPSUtil.doc2pdf(srcFilePathdoc, srcFilePathpdf);
 		OutputStream outputStream = fileLoaderSocket.getOutputStream();
 
 		InputStream fileRead = new FileInputStream(srcFilePathpdf);
