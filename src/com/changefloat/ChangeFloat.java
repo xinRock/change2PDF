@@ -2,7 +2,7 @@ package com.changefloat;
 
 /**
  * 
- * 将100.2转成IEEE745 二进制表示
+ * 将100.2转成IEEE754 二进制表示
  * @author menggq
  *
  */
