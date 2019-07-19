@@ -1,10 +1,7 @@
 package com.cmd;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,19 +11,18 @@ public class TestsimpleCmd {
 		Runtime runtime = Runtime.getRuntime();
 		Map<String, String> lineMap = new HashMap<String, String>();// 存放返回值
 		try {
-			Process exec = runtime.exec("cmd /c java");
-			BufferedInputStream bis = new BufferedInputStream(exec.getInputStream());
-			InputStreamReader isr = new InputStreamReader(bis);// 将字节流转化成字符流
-			int read = isr.read();
-			System.out.println(read);
+			//cmd /c 是相当于以超级管理员身份运行的cmd命令
+			Process exec = runtime.exec("c:/nircmd.exe elevate time 14:17:00");
+			//Process exec = runtime.exec("cmd /c start D:\\Users\\zookeeper-3.4.6\\zookeeper-3.4.6\\bin\\zkServer.cmd");
+			//Process exec = runtime.exec("cmd /c start D:\\Users\\zookeeper-3.4.6\\zookeeper-3.4.6\\bin\\zkCli.cmd");
+			InputStream inputStream = exec.getInputStream();
 			int i;
+			System.out.println(inputStream.read());
 			
-			while ((i = isr.read()) != -1) {
+			while ((i = inputStream.read()) != -1) {
 				System.out.println((char) i);
 			}
-
-			isr.close();
-			bis.close();
+			inputStream.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
