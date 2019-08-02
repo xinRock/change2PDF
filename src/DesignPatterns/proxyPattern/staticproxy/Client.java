@@ -4,7 +4,7 @@ import DesignPatterns.proxyPattern.staticproxy.impl.GamePlayer;
 import DesignPatterns.proxyPattern.staticproxy.impl.GamePlayerProxy;
 
 /**
- * 
+ * 一个普通的代理模式
  在代理模式中，有三个角色的定义：
 	Subject抽象主题角色
 	抽象主题可以是抽象类也可以是接口，是一个最普通的业务类型定义；
