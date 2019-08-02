@@ -1,6 +1,6 @@
-package DesignPatterns.proxyPattern.impl;
+package DesignPatterns.proxyPattern.staticproxy.impl;
 
-import DesignPatterns.proxyPattern.IGamePlayer;
+import DesignPatterns.proxyPattern.staticproxy.IGamePlayer;
 
 public class GamePlayer implements IGamePlayer {
 	

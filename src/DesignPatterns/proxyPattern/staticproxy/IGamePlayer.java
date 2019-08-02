@@ -1,4 +1,4 @@
-package DesignPatterns.proxyPattern;
+package DesignPatterns.proxyPattern.staticproxy;
 /*
  * Subject抽象主题角色
  * 	抽象主题可以是抽象类也可以是接口，是一个最普通的业务类型定义；

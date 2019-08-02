@@ -1,7 +1,7 @@
-package DesignPatterns.proxyPattern;
+package DesignPatterns.proxyPattern.staticproxy;
 
-import DesignPatterns.proxyPattern.impl.GamePlayer;
-import DesignPatterns.proxyPattern.impl.GamePlayerProxy;
+import DesignPatterns.proxyPattern.staticproxy.impl.GamePlayer;
+import DesignPatterns.proxyPattern.staticproxy.impl.GamePlayerProxy;
 
 /**
  * 
@@ -19,9 +19,13 @@ import DesignPatterns.proxyPattern.impl.GamePlayerProxy;
 public class Client {
 
 	public static void main(String[] args) {
-        
+        //Subject 主题
         IGamePlayer gamePlayer = new GamePlayer("Tom");
+        
+        //Proxy代理主题角色
+        //委托类、代理类
         IGamePlayer proxy = new GamePlayerProxy(gamePlayer);
+        
         proxy.login("Tom", "123");
         proxy.killBoss();
         proxy.upgrade(); 
