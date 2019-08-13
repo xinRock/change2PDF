@@ -2,7 +2,6 @@ package threadCommunication;
 /**
  *@functon 线程通信之生产类（继承Thread类） 
  *@author 温煦（昵称：沉沦之巅）
- *@time 2017.12.5 
  */
 public class producer extends Thread{
 
