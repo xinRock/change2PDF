@@ -41,12 +41,13 @@ public class Breads {
         bid = bid + 1 ;//id当然也得加1
         String threadname = Thread.currentThread().getName();
         System.out.println(threadname+"生产了一个编号为"+bid+"的面包！");
+        
         try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        
         notify();//当执行完后，去唤醒其他处于等待的线程
     }
     //消费面包的方法
@@ -64,12 +65,13 @@ public class Breads {
         num  =  num -1;//数量减1
         String name1 = Thread.currentThread().getName();
         System.out.println(name1+"买了一个面包编号为"+bid);
+        
         try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+        
         notify();//当执行完后，去唤醒其他处于等待的线程
     }
 

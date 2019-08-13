@@ -7,7 +7,7 @@ package threadCommunication;
 public class TestBreads {
 	 public static void main(String[] args) {
 	        
-	        //new一个面包类
+	        //new一个面包类也叫资源类 Object
 	        Breads bre = new Breads();
 	        
 	        //new一个生产者类

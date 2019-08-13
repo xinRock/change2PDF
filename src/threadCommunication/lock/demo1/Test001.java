@@ -1,8 +1,22 @@
-package threadCommunication;
+package threadCommunication.lock.demo1;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+/**
+ * Lock的测试类
+ * @author menggq
+ *
+ */
+public class Test001 {
+	public static void main(String[] args) {
+		Res res = new Res();
+		IntThread intThread = new IntThread(res);
+		OutThread outThread = new OutThread(res);
+		intThread.start();
+		outThread.start();
+	}
+}
 //对象资源
 class Res {
 	public String userSex;
@@ -23,10 +37,12 @@ class IntThread extends Thread {
 	public void run() {
 		int count = 0;
 		while (true) {
+			// synchronized (res) {
 			try {
 				System.out.println("IntThread 的run 进入");
 				res.lock.lock();
 				if (res.flag) {
+					//res.condition.await();类似Object.wait
 					res.condition.await();
 				}
 
@@ -41,7 +57,9 @@ class IntThread extends Thread {
 				
 				count = (count + 1) % 2;
 				res.flag = true;
+				//res.Condition.Signal() 类似Object.notify
 				res.condition.signal();
+				//Object.notify		
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
@@ -86,19 +104,6 @@ class OutThread extends Thread {
 			}
 			System.out.println("OutThread  的 run 离开");
 		}
-	}
-
-}
-
-public class Test001 {
-
-	public static void main(String[] args) {
-
-		Res res = new Res();
-		IntThread intThread = new IntThread(res);
-		OutThread outThread = new OutThread(res);
-		intThread.start();
-		outThread.start();
 	}
 
 }
